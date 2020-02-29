@@ -21,17 +21,25 @@ public class Guard : MonoBehaviour
         audioManager = AudioManager.instance;
     }
 
+    private static int i = 0;
+    private static bool alertPlayed = false;
+
     void Update()
     {
         if (Alertstatus == true)
         {
             agent.SetDestination(target.position);
             Monitoring = 0;
-            audioManager.PlaySound("alertSound");
+            if (alertPlayed == false)
+            {
+                audioManager.PlaySound("alertSound");
+                alertPlayed = true;
+            }
         }
         if (Alertstatus == false && Monitoring == 1)
         {
             agent.SetDestination(resetpoint.position);
+            alertPlayed = false;
             if (resetpoint.position == guard.position)
             {
                 Monitoring = 2;
@@ -40,6 +48,7 @@ public class Guard : MonoBehaviour
         if (Alertstatus == false && Monitoring == 2)
         {
             agent.SetDestination(resetpoint2.position);
+            alertPlayed = false;
             if (resetpoint2.position == guard.position)
             {
                 Monitoring = 1;

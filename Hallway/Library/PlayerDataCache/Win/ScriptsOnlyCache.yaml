@@ -8,6 +8,7 @@ ScriptsOnlyBuild:
     - Gun
     - PlayerMovement
     - QuitGame
+    - SpawnProjectile
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -74,9 +75,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11138}
     - Class: 114
-      Script: {instanceID: 11360}
+      Script: {instanceID: 11308}
     - Class: 114
-      Script: {instanceID: 19972}
+      Script: {instanceID: 11362}
+    - Class: 114
+      Script: {instanceID: 11410}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 143
@@ -86,6 +89,10 @@ ScriptsOnlyBuild:
     - Class: 195
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 208
       Script: {instanceID: 0}
@@ -488,6 +495,12 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: QuitGame
+  - hash:
+      serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -548,17 +561,17 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
+      Hash: b57ae34c39741c9018af669fa913f857
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SpawnProjectile
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: QuitGame
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/UCF2020/Team_Project2_v0.1/SoundTest_Build/Hallway.exe
+  playerPath: D:/UCF2020/Hallway_Build/Hallway.exe

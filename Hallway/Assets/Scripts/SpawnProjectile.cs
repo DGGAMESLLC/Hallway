@@ -6,25 +6,25 @@ public class SpawnProjectile : MonoBehaviour
 {
     public GameObject firePoint;
     public List<GameObject> vfx = new List<GameObject>();
-    //public RotateToMouse rotateToMouse;
     public float fireRate;
-
-    //public Camera fpsCam;
     public float range = 10f;
 
     private GameObject effectToSpawn;
     private float nextFire;
+
+    private AudioManager audioManager;
     
     // Start is called before the first frame update
     void Start()
     {
         effectToSpawn = vfx[0];
+        audioManager = AudioManager.instance;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0) && Time.time > nextFire)
+        if (Input.GetMouseButtonDown(0) && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
             SpawnVFX();
@@ -34,6 +34,7 @@ public class SpawnProjectile : MonoBehaviour
     void SpawnVFX()
     {
         GameObject vfx;
+        audioManager.PlaySound("fireSound");
         if (firePoint != null)
         {
             vfx = Instantiate(effectToSpawn, firePoint.transform.position,

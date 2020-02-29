@@ -4,22 +4,19 @@ public class Gun : MonoBehaviour
 {
     public float damage = 10f;
     public float range = 100f;
+    public float fireRate;
+    private float nextFire;
 
     public Camera fpsCam;
 
     private AudioManager audioManager;
-
-    void Start()
-    {
-        audioManager = AudioManager.instance;
-    }
     
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1") && Time.time > nextFire)
         {
+            nextFire = Time.time + fireRate;
             Shoot();
-            audioManager.PlaySound("fireSound");
         }
 
         void Shoot ()
