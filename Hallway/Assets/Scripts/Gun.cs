@@ -10,16 +10,16 @@ public class Gun : MonoBehaviour
     public Camera fpsCam;
 
     private AudioManager audioManager;
-    
+
     void Update()
     {
-        if(Input.GetButtonDown("Fire1") && Time.time > nextFire)
+        if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
             Shoot();
         }
 
-        void Shoot ()
+        void Shoot()
         {
             RaycastHit hit;
             if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))

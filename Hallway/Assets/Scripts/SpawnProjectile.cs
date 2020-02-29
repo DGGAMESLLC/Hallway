@@ -13,7 +13,7 @@ public class SpawnProjectile : MonoBehaviour
     private float nextFire;
 
     private AudioManager audioManager;
-    
+
     // Start is called before the first frame update
     void Start()
     {
